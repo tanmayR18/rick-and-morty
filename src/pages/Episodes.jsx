@@ -17,6 +17,7 @@ const Episodes = () => {
     })
     
     function formHandler(e) {
+        setPage(1)
         setFormData( (prevState => {
             return {...prevState, [e.target.name]: e.target.value}
         }))
@@ -46,13 +47,14 @@ const Episodes = () => {
     },[page, formData])
 
   return (
-    <div className=' pt-[78px] relative'>
-        <div className=' w-full md:w-[90%] p-2 md:p-0 mx-auto'>
+    <div className=' py-[78px] relative'>
+        {/* Removed md:w-[90%] from below div class */}
+        <div className=' w-full  p-2 md:p-0 mx-auto'>
             <img className=' object-cover h-screen w-screen fixed top-0 left-0' src={EpisodeBgImage} alt='charactr background image' />
             <div className=' bg-black/70 sm:bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
             <div className=' w-full md:w-[90%] p-2 md:p-0 mx-auto flex flex-col gap-10 z-20'>
                 <div className=' flex flex-col sm:flex-row space-y-6 justify-between sm:items-center z-30'>
-                    <h1 className=' text-2xl sm:text-3xl font-bold text-white'>Explore the characters</h1>
+                    <h1 className=' text-2xl sm:text-3xl font-bold text-white'>Explore the Episodes</h1>
                     <div  className=' flex items-center relative rounded-3xl overflow-hidden p-1'>
                         <Search className=' absolute left-2' />
                         <input 
@@ -74,7 +76,7 @@ const Episodes = () => {
                         type='text' name='episode' value={formData.episode} onChange={(e) => formHandler(e)} placeholder='Ex: S01E10' />
                     </div>
                 </div>
-            </form>
+                </form>
 
             <EpisodeCards data={data} />
 

@@ -9,7 +9,7 @@ const EpisodeCards = ({data}) => {
         {
             data.results?.map( item => (
                 <Link to={`/episode/${item.id}`} key={item.id} className=" flex items-center gap-4 text-white p-3 rounded-xl overflow-hidden bg-yellow-400/50">
-                    <div className=' bg-red-600 p-1 rounded-xl'>
+                    <div className=' bg-red-600 p-1 px-2 rounded-xl'>
                         {item.episode}
                     </div>
                     <div>

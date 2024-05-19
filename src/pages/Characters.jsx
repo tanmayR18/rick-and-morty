@@ -21,6 +21,7 @@ const Characters = () => {
 
 
     function formHandler(e) {
+        setPage(1)
         setFormData( (prevState => {
             return {...prevState, [e.target.name]: e.target.value}
         }))
@@ -84,16 +85,16 @@ const Characters = () => {
                 <h4 className=' font-semibold text-lg '>Filters:</h4>
                 <div className='flex flex-wrap gap-5 items-center'>
                     <div className=' flex gap-2 items-center'>
-                        <label htmlFor="species">species</label>
+                        <label htmlFor="species">Species</label>
                         <input 
                         className='focus:border-none appearance-none focus:outline-none rounded-md p-1 text-black'
-                        type='text' name='species' value={formData.species} onChange={(e) => formHandler(e)} placeholder='species' />
+                        type='text' name='species' value={formData.species} onChange={(e) => formHandler(e)} placeholder='Ex: Alien' />
                     </div>
                     <div className=' flex gap-2 items-center'>
-                        <label htmlFor="species">type</label>
+                        <label htmlFor="species">Type</label>
                         <input 
                         className='focus:border-none appearance-none focus:outline-none rounded-md p-1 text-black'
-                        type='text' name='type' value={formData.type} onChange={(e) => formHandler(e)} placeholder='type' />
+                        type='text' name='type' value={formData.type} onChange={(e) => formHandler(e)} placeholder='Ex: Superhuman' />
                     </div>
                     <div className=' flex gap-2 items-center'>
                         <label htmlFor="species">Status</label>
@@ -107,7 +108,7 @@ const Characters = () => {
                         </select>
                     </div>
                     <div className=' flex gap-2 items-center'>
-                        <label htmlFor="gender">species</label>
+                        <label htmlFor="gender">Gender</label>
                         <select 
                         className='focus:border-none appearance-none focus:outline-none rounded-md p-1 text-black'
                         type='text' name='gender' value={formData.gender} onChange={(e) => formHandler(e)} placeholder='gender'>
