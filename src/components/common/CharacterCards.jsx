@@ -9,7 +9,7 @@ const CharacterCards = ({data}) => {
             data.results?.map( item => (
                 <Link to={`/character/${item.id}`} key={item.id} className="  overflow-hidden">
                     <img className='rounded-xl' src={item.image} alt={`${item.name} image`} />
-                    <div>
+                    <div className='text-white'>
                         {item.name}
                     </div>
                 </Link>

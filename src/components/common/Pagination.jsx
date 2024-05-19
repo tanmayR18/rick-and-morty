@@ -2,6 +2,7 @@ import React from 'react'
 import {MdKeyboardDoubleArrowLeft, MdKeyboardArrowLeft, MdKeyboardArrowRight, MdKeyboardDoubleArrowRight} from "react-icons/md"
 
 const PaginationSection = ({data, page, setPage}) => {
+    console.log("In the pagination", data, page)
   return (
     <div className='w-full flex justify-center items-center gap-2 z-20'>
         {/* TO got to first page */}
