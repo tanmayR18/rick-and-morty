@@ -40,8 +40,8 @@ const Navbar = () => {
                         <X className=' absolute top-5 right-5'/>
                         <div className=' flex flex-col gap-6  h-full'>
                             <Link to={"/characters"}>Characters</Link>
-                            <Link to={"/Episodes"}>Episodes</Link>
-                            <Link to={"/Locations"}>Locations</Link>
+                            <Link to={"/episodes"}>Episodes</Link>
+                            <Link to={"/locations"}>Locations</Link>
                             
                         </div>
 

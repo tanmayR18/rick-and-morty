@@ -1,9 +1,6 @@
 import React from 'react'
 import pcBg2 from "../assets/pcBg2.jpeg"
 import mobileBg1 from "../assets/mobilBg1.jpeg"
-import character from "../assets/character.jpeg"
-import episode from "../assets/episode.jpeg"
-import location from "../assets/location.jpg"
 import { Heart } from 'lucide-react'
 
 const Home = () => {
