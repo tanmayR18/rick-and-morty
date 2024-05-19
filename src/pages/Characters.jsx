@@ -66,14 +66,14 @@ const Characters = () => {
   return (
     <div className=' py-[78px] relative'>
         <img className=' object-cover h-screen w-screen fixed top-0 left-0' src={bgImage} alt='charactr background image' />
-        <div className=' bg-black/70 sm:bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
+        <div className='bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
         <div className=' w-full md:w-[90%] p-2 md:p-0 mx-auto flex flex-col gap-10 z-20'>
             <div className=' flex flex-col sm:flex-row space-y-6 justify-between sm:items-center z-30'>
                 <h1 className=' text-2xl sm:text-3xl font-bold text-white'>Explore the characters</h1>
                 <form  className=' flex items-center relative rounded-3xl overflow-hidden p-1'>
                     <Search className=' absolute left-2' />
                     <input 
-                    className=' focus:border-none appearance-none focus:outline-none pl-10 p-1 h-full w-full'
+                    className=' focus:border-none appearance-none focus:outline-none pl-10 p-1 py-2 h-full w-full'
                     type='text' 
                     placeholder='Eg: Beth Smith'
                     value={character} 

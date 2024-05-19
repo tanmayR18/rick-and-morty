@@ -70,7 +70,7 @@ const EpisodePage = () => {
     <div className=' py-[78px] relative'>
         <div className=' w-full  p-2 md:p-0 mx-auto'>
             <img className=' object-cover h-screen w-screen fixed top-0 left-0' src={bgImage} alt='charactr background image' />
-            <div className=' bg-black/70 sm:bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
+            <div className=' bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
 
             <div className=' w-full md:w-[90%] p-2 md:p-0 mx-auto flex flex-col gap-8 z-20'>
                 <div className=' flex flex-col gap-4 pt-5 justify-between  z-30 text-white'>

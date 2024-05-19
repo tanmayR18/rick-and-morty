@@ -73,7 +73,7 @@ const CharacterPage = () => {
    <div className=' py-[78px] relative'>
         <div className=' w-full  p-2 md:p-0 mx-auto'>
             <img className=' object-cover h-screen w-screen fixed top-0 left-0' src={data?.image || BackupBgImage} alt='charactr background image' />
-            <div className=' bg-black/70 sm:bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
+            <div className=' bg-black/90 fixed top-0 left-0 z-10 h-screen w-screen' />
 
             <div className=' w-full md:w-[90%] p-2 md:p-0 mx-auto flex flex-col gap-10 z-20'>
                 <div className=' flex flex-col sm:flex-row space-y-6 justify-between sm:items-center z-30'>
@@ -131,7 +131,7 @@ const CharacterPage = () => {
                             </div>
                         </div>
                         
-                        // TODO: Add a conditional rendering here
+                        {/* TODO: Add a conditional rendering here */}
                         <div className=' flex flex-col gap-6'>
                             <h2 className=' text-center font-bold text-3xl tracking-wider'>Episodes appearance</h2> 
                             <EpisodeCards data={episodes} />

@@ -28,6 +28,7 @@ const Navbar = () => {
                 <Link className='  hover:text-yellow-400  relative group' to={"/locations"}>Locations <div className=' absolute scale-x-0 group-hover:scale-x-100 duration-300  h-[2px] w-full bg-white group-hover:bg-yellow-400' /></Link>
             </div>
 
+            {/* For mobile view */}
             <div className=' flex lg:hidden relative'>
                 <Menu 
                 className=' cursor-pointer'
@@ -36,16 +37,16 @@ const Navbar = () => {
                 <div 
                 onClick={() => setShowDropDown(false)}
                 className={` ${ showDropDown ? "flex " : "hidden "} bg-white/20  duration-300 fixed justify-end top-0 left-0 h-screen w-screen cursor-pointer`}>
-                    <div className={`flex flex-col  relative text-lg md:text-2xl gap-6 bg-slate-800 border-l p-8 py-24`}>
+                    <div className={`flex flex-col  relative text-lg md:text-xl gap-6 bg-slate-800 border-l p-6 py-24`}>
                         <X className=' absolute top-5 right-5'/>
                         <div className=' flex flex-col gap-6  h-full'>
-                            <Link to={"/characters"}>Characters</Link>
-                            <Link to={"/episodes"}>Episodes</Link>
-                            <Link to={"/locations"}>Locations</Link>
+                            <Link className=' rounded-lg hover:bg-white/10 p-1 px-2' to={"/characters"}>Characters</Link>
+                            <Link className=' hover:bg-white/10 p-1 px-2 rounded-lg' to={"/episodes"}>Episodes</Link>
+                            <Link className=' hover:bg-white/10 p-1 px-2 rounded-lg' to={"/locations"}>Locations</Link>
                             
                         </div>
 
-                        <Link to={"/"}> Home </Link>
+                        <Link className=' hover:bg-white/10 p-1 px-2 rounded-lg' to={"/"}> Home </Link>
                     </div>
                 </div>
             </div>
