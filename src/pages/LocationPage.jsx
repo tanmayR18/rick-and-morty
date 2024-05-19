@@ -12,6 +12,7 @@ const LocationPage = () => {
     const [ data, setData ] = useState([])
     const [ characters, setCharacters ] = useState([])
     const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
 
     function chunkArray(myArray, chunk_size){
         var index = 0;
@@ -56,10 +57,12 @@ const LocationPage = () => {
     }
 
     async function getEpisodeInfo(){
+        setLoading(true)
         const response = await fetchApi(`location/${id}`)
         console.log("Response of single character",response)
         getLocationCharacters(response)
         setData(response)
+        setLoading(false)
     }
 
     useEffect(() => {
@@ -87,6 +90,10 @@ const LocationPage = () => {
                         
                    </div>
                 </div>
+
+                {
+                    loading && <span className="loader z-30 fixed top-1/2 left-1/2 my-5"></span>
+                }
 
                 <div className=' flex flex-col gap-6 z-30'>
                     <h2 className=' text-white text-lg sm:text-2xl text-center font-bold tracking-wide'>{`Residents of ${data.name}`}</h2>

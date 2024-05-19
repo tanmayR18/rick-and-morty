@@ -10,6 +10,7 @@ const Characters = () => {
 
     const [ data, setData ] = useState([])
     const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
     const [ character, setCharacter ] = useState("")
     const [ formData, setFormData ] = useState({
         species : "",
@@ -53,8 +54,10 @@ const Characters = () => {
         }
 
         console.log("Query object", queryObject)
+        setLoading(true)
         const response = await fetchApi("character", queryObject)
         setData(response)
+        setLoading(false)
     }
 
     useEffect( () => {
@@ -122,6 +125,10 @@ const Characters = () => {
                 </div>
             </form>
 
+            {
+                loading && <span className="loader z-30 fixed top-1/2 left-1/2"></span>
+            }
+            
             <CharacterCards data = {data} />
 
             {

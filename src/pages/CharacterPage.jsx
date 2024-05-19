@@ -14,6 +14,7 @@ const CharacterPage = () => {
     const [ data, setData ] = useState([])
     const [ episodes, setEpisodes ] = useState([])
     const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
 
 
     function chunkArray(myArray, chunk_size){
@@ -59,10 +60,12 @@ const CharacterPage = () => {
     }
 
     async function getCharacterInfo(){
+        setLoading(true)
         const response = await fetchApi(`character/${id}`)
         console.log("Response of single character",response)
         getCharactersEpisodes(response)
         setData(response)
+        setLoading(false)
     }
 
     useEffect( () => {
@@ -130,12 +133,20 @@ const CharacterPage = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {
+                            loading && <span className="loader z-30 fixed top-1/2 left-1/2 my-5"></span>
+                        }
                         
                         {/* TODO: Add a conditional rendering here */}
                         <div className=' flex flex-col gap-6'>
                             <h2 className=' text-center font-bold text-3xl tracking-wider'>Episodes appearance</h2> 
                             <EpisodeCards data={episodes} />
                         </div>
+
+                        {/* {
+                            loading && <span className="loader z-30 fixed top-1/2 left-1/2"></span>
+                        } */}
 
                         {
                             data.error && <div className=' font-bold text-lg flex justify-center z-20 text-white'>

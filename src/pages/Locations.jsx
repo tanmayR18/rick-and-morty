@@ -8,6 +8,7 @@ import LocationCards from '@/components/common/LocationCards'
 const Locations = () => {
     const [ data, setData ] = useState([])
     const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
     const [ formData, setFormData ] = useState({
         name: "",
         type:"",
@@ -40,8 +41,10 @@ const Locations = () => {
 
         console.log("FormData", formData.name, formData.episode)
         console.log("Query object", queryObject)
+        setLoading(true)
         const response = await fetchApi("location", queryObject)
         setData(response)
+        setLoading(false)
     }
 
     useEffect( () => {
@@ -85,6 +88,12 @@ const Locations = () => {
                     </div>
                 </div>
             </form>
+            
+
+            {
+                loading && <span className="loader z-30 fixed top-1/2 left-1/2"></span>
+            }
+
 
             <LocationCards data={data} />
 

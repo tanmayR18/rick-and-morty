@@ -11,6 +11,7 @@ const Episodes = () => {
 
     const [ data, setData ] = useState([])
     const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
     const [ formData, setFormData ] = useState({
         name: "",
         episode:"",
@@ -38,8 +39,10 @@ const Episodes = () => {
 
         console.log("FormData", formData.name, formData.episode)
         console.log("Query object", queryObject)
+        setLoading(true)
         const response = await fetchApi("episode", queryObject)
         setData(response)
+        setLoading(false)
     }
 
     useEffect( () => {
@@ -77,6 +80,11 @@ const Episodes = () => {
                     </div>
                 </div>
                 </form>
+
+
+            {
+                loading && <span className="loader z-30 fixed top-1/2 left-1/2"></span>
+            }
 
             <EpisodeCards data={data} />
 
