@@ -64,7 +64,7 @@ const EpisodePage = () => {
 
     useEffect(() => {
         getEpisodeInfo()
-    }, page, location.pathname)
+    },[ page, location.pathname])
 
   return (
     <div className=' py-[78px] relative'>
@@ -78,7 +78,7 @@ const EpisodePage = () => {
                         <h1 className=' text-[2rem] font-bold'>
                                 {data.name}
                         </h1>
-                        <h3>
+                        <h3 className=' font-bold'>
                                 {data.episode}
                         </h3>
                    </div>
