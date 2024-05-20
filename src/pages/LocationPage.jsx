@@ -85,7 +85,7 @@ const LocationPage = () => {
                                 Type: {data.type || "Unknown"}
                         </div>
                         <div> 
-                            Dimenstion: {data.dimension || "Unknown"} 
+                            Dimension: {data.dimension || "Unknown"} 
                         </div>
                         
                    </div>
