@@ -10,6 +10,7 @@ import CharacterPage from './pages/CharacterPage'
 import LocationPage from './pages/LocationPage'
 import EpisodePage from './pages/EpisodePage'
 import Error from './pages/Error'
+import Todo from './pages/Todo'
 
 function App() {
  
@@ -25,6 +26,7 @@ function App() {
             <Route path='/character/:id' element={<CharacterPage/>} />
             <Route path='/location/:id' element={<LocationPage/>} />
             <Route path='/episode/:id' element={<EpisodePage/>} />
+            <Route path='/todo' element={<Todo/>}/>
             <Route path='*' element={<Error/>} />
         </Routes>
     </div>
