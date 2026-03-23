@@ -40,10 +40,11 @@ const Home = () => {
                             9.1/10 IMDB rating
                         </div>
 
+                      {/*
                         <p className=' hidden md:block'>
                             ~ Developed with <Heart className=' inline-block ' fill='red' /> by Tanmay Rane 
                         </p>
-
+                      */}
                     </div>
                </div>
 
